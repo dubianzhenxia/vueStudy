@@ -122,6 +122,27 @@ editor：只有被赋予权限的页面和按钮才可以看到；
 
 
 ## npm i 后npm run serve报错
+错误内容如下：
+> ERROR Error: Rule can only have one resource source (provided resource and test + include + exclude) in {
+> "exclude": [
+> null
+> ],
+> "use": [
+> {
+> "loader": "cache-loader",
+> "options": {
+> "cacheDirectory": "D:\desk\vue2-element-touzi-admin\node_modules\.cache\babel-loader",
+> "cacheIdentifier": "a5ed1dd2"
+> },
+> "ident": "clonedRuleSet-38.use[0]"
+> },
+> {
+> "loader": "babel-loader",
+> "options": "undefined",
+> "ident": "undefined"
+> }
+> ]
+> }
 
 这个错误是webpack5的原因，似乎要用4.46.0以下版本，把package.json换成下面的内容（除了限制webpack版本，还降低了几个依赖冲突的版本），然后删除package-lock.json和node_modules，重新npm i，就可以成功运行了，不过nodejs版本不能过高，不然还会报错，用10.9.0版本可以正常运行。不过做了这些修改不确定项目中所有功能是否有影响。
 
