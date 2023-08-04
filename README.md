@@ -120,6 +120,71 @@ editor：只有被赋予权限的页面和按钮才可以看到；
 
 项目说明：小爱ADMIN 是完全开源免费的管理系统集成方案，可以直接应用于相关后台管理系统模板；很多重点地方都做了详细的注释和解释。如果你也一样喜欢前端开发，欢迎加入我们的讨论/学习群，群内可以提问答疑，分享学习资料；
 
+
+## npm i 后npm run serve报错
+
+这个错误是webpack5的原因，似乎要用4.46.0以下版本，把package.json换成下面的内容（除了限制webpack版本，还降低了几个依赖冲突的版本），然后删除package-lock.json和node_modules，重新npm i，就可以成功运行了，不过nodejs版本不能过高，不然还会报错，用10.9.0版本可以正常运行。不过做了这些修改不确定项目中所有功能是否有影响。
+
+```json
+{
+  "name": "vue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:dev": "vue-cli-service build --mode development",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.21.2",
+    "core-js": "^2.6.9",
+    "echarts": "^5.4.0",
+    "element-ui": "^2.11.1",
+    "express": "^4.17.1",
+    "js-cookie": "^2.2.1",
+    "mockjs": "^1.0.1-beta3",
+    "nprogress": "^0.2.0",
+    "qrcodejs2": "0.0.2",
+    "vue": "^2.6.10",
+    "vue-i18n": "^8.14.0",
+    "vue-router": "^3.1.2",
+    "vuex": "^3.1.1",
+    "webpack": "4.44.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "babel-eslint": "^10.0.2",
+    "compression-webpack-plugin": "^4.0.0",
+    "image-webpack-loader": "^8.1.0",
+    "less": "^4.1.3",
+    "less-loader": "^7.3.0",
+    "terser-webpack-plugin": "^4.0.0",
+    "css-loader": "^4.0.0",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^4.7.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
+```
+
 欢迎添加群主微信和qq群答疑：
 
 ![image](https://github.com/wdlhao/vue2-element-touzi-admin/blob/dev-permission/src/assets/img/qcode.jpg)
