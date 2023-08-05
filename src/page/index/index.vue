@@ -88,9 +88,10 @@
 				</el-col>
 				<el-col :span="17">
 					<bar-chart type="barChart"></bar-chart>
+				
 				</el-col>
 			</el-row>
-			<el-row :gutter="10" class="row_list order_list">
+			<el-row :gutter="10" class="row_list order_list">			
 				<el-col :span="7">
 				    <pie-chart type="ordertype"></pie-chart>
 				</el-col>
