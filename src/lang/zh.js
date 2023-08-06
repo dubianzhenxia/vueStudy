@@ -33,7 +33,9 @@ const zh = {
       errorPage: '错误页面',
       page401:'401',
       page404:'404',
-      wechatNumber: '微信号'
+      wechatNumber: '微信号',
+      myFunctionPage: '我的自定义页面',
+      dlt: '大乐透',
     },
     index:{
       yearLoss:'年度总盈亏',

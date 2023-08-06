@@ -22,7 +22,7 @@
                             <el-menu-item class="dropItem" 
                                 :index="item.path+'/'+item.children[0].path"
                                 >
-                                <icon-svg v-if="item.meta.icon" :icon-class="item.meta.icon" />
+                                <i v-if="item.meta.icon" :class="item.meta.icon" ></i>
                                 <span v-if="item.meta.title" slot="title">{{ $t(`commons.${item.name}`)}}</span> 
                             </el-menu-item>
                         </router-link>
@@ -30,7 +30,7 @@
                         <!--表示 有二级或者多级菜单 -->
                         <el-submenu v-if="item.children  && item.children.length >= 1 && !item.hidden && !item.noDropdown"  :index="item.path" :key="index">
                             <template slot="title">
-                                <icon-svg v-if="item.meta.icon" :icon-class="item.meta.icon" />
+                                <i v-if="item.meta.icon" :class="item.meta.icon" ></i>
                                 <span v-if="item.meta.title" slot="title">{{ $t(`commons.${item.name}`)}}</span>
                             </template>
                             <!--直接定位到子路由上，子路由也可以实现导航功能-->

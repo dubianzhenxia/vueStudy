@@ -33,7 +33,9 @@ const zh = {
       errorPage: 'ErrorPage',
       page401:'401',
       page404:'404',
-      wechatNumber: 'wechat'
+      wechatNumber: 'wechat',
+      myFunctionPage: 'myFunctionPage',
+      dlt: 'dlt',
     },
     index:{
       yearLoss:'Year Loss',

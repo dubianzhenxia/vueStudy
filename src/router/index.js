@@ -43,7 +43,7 @@ export const constantRouterMap = [
 		component:Layout,
 		meta:{
 			title:'首页',
-		  icon: 'icondashboard',
+		  icon: 'el-icon-s-home',
 		},
 		noDropdown:true,
 		children:[ 
@@ -51,7 +51,7 @@ export const constantRouterMap = [
 				path:'index', 
 				meta:{
 					title:'首页', 
-					icon:'icondashboard',
+					icon:'el-icon-s-home',
 				  routerType:'leftmenu'
 				},
         component: () => import('@/page/index/index'),
@@ -75,7 +75,7 @@ export const asyncRouterMap = [
 		component:Layout,
 		meta: {
 			title:'用户管理',
-			icon: 'iconuser',
+			icon: 'el-icon-s-custom',
 		},
 		noDropdown:true,
 		children:[
@@ -83,7 +83,7 @@ export const asyncRouterMap = [
 				path:'userList', 
 				meta:{
 					title:'用户管理', 
-					icon:'iconuser',
+					icon:'el-icon-s-custom',
 				  routerType:'leftmenu'
 				},
 				component: () => import('@/page/userList/userList'),
@@ -96,7 +96,7 @@ export const asyncRouterMap = [
 		component:Layout,
 		meta: {
 			title:'分享功能',
-			icon: 'iconshare',
+			icon: 'el-icon-share',
 		},
 		noDropdown:true,
 		children:[
@@ -104,7 +104,7 @@ export const asyncRouterMap = [
 				path:'share', 
 				meta:{
 				  title:'分享功能', 
-				  icon:'iconshare',
+				  icon:'el-icon-share',
 				  routerType:'leftmenu'
 				},
 				component: () => import('@/page/share'),
@@ -116,7 +116,7 @@ export const asyncRouterMap = [
 	  name: 'infoManage',
 	  meta: {
 			title:'信息管理',
-			icon: 'iconinfo',
+			icon: 'el-icon-chat-line-square',
 	  },
 	  component:Layout,
 	  children:[
@@ -125,7 +125,7 @@ export const asyncRouterMap = [
 		   name:'infoShow',
 		   meta: {
 					title:'个人信息',
-					icon: 'iconinfo',
+					icon: 'el-icon-user',
 					routerType:'leftmenu',
 					titleList:[
 						{"path":"infoShow1","title":"个人信息子菜单1"},
@@ -143,7 +143,7 @@ export const asyncRouterMap = [
 			name:'infoModify',
 			meta: {
 				title:'修改信息',
-				icon: 'iconinfo',
+				icon: 'el-icon-edit-outline',
 				routerType:'leftmenu',
 				titleList:[
 					{"path":"infoModify1","title":"修改信息子菜单1"},
@@ -161,7 +161,7 @@ export const asyncRouterMap = [
 		name: 'fundManage',
 		meta: {
 		  title:'资金管理',
-		  icon: 'iconpay3',
+		  icon: 'el-icon-s-finance',
 		},
 		component:Layout,
 		children:[
@@ -190,7 +190,7 @@ export const asyncRouterMap = [
 		name: 'fundData',
 		meta: {
 		  title:'资金数据',
-		  icon: 'iconecharts',
+		  icon: 'el-icon-coin',
 		},
 		component:Layout,
 		redirect: '/fundData/fundPosition',
@@ -226,7 +226,7 @@ export const asyncRouterMap = [
 		name: 'permission',
 		meta: {
       title: '权限设置',
-      icon: 'iconpermission',
+      icon: 'el-icon-view',
       roles: ['admin', 'editor'] // you can set roles in root nav
     },
     component: Layout,
@@ -255,7 +255,7 @@ export const asyncRouterMap = [
     name: 'errorPage',
     meta: {
       title: '错误页面', 
-      icon: 'iconError'
+      icon: 'el-icon-error'
     },
     children: [
 			{  
@@ -276,6 +276,26 @@ export const asyncRouterMap = [
 					noCache: true
 				}
 			}
+    ]
+  },
+  {
+    path: '/myFunction',
+    component: Layout,
+    name: 'myFunctionPage',
+    meta: {
+      title: '我的自定义页面', 
+      icon: 'el-icon-thumb'
+    },
+    children: [
+			{  
+				path: 'dlt', 
+				name: 'dlt', 
+				component: () => import('@/page/myPage/Dlt'), 
+				meta: { 
+					title: '大乐透', 
+					noCache: true 
+			  }
+			},
     ]
   },
 	{ path: '*', redirect: '/404', hidden: true }
