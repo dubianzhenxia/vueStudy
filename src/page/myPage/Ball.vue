@@ -2,7 +2,6 @@
     <div>
         <h3 :style="ballStyle">{{ballName}}</h3>
         <span v-for="ball in ballList" :key="ball.ballnum" :class="ball.ballClass" @click="checkBall(ball)">
-            <!-- 感觉要一个ball的组件 里面data有 nuber:1,ischeck:false-->
             {{ ball.ballnum }}
         </span>
 
