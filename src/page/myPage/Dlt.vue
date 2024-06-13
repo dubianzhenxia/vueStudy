@@ -1,12 +1,11 @@
 <template>
   <div>
     <el-row :gutter="50" style="margin-top: 40px; height: 715px;">
-        <!-- 红球 -->
+        
     <el-col :span="5" :push="2">
         <Ball :ballList="redBallList" ballStyle="color: #ff4242;" ballName="红球" @checkBall="checkBall"/>
     </el-col>
 
-        <!--蓝球  -->
     <el-col :span="3" :push="2">
         <Ball :ballList="blueBallList" ballStyle=" color: #4545f1;" ballName="蓝球"  @checkBall="checkBall"/>
     </el-col>
@@ -37,6 +36,9 @@ export default {
               checkBallList:{redBallArr:[],blueArr:[]},
            }
         },
+        mounted() {
+            console.dir(this)
+        },
         methods: {
             //ball组件将选择的红球或篮球通过事件传过来
             checkBall(checkBallList,ballname){
@@ -54,7 +56,7 @@ export default {
                     }
                 }
                 console.log(this.checkBallList);
-            }
+            },
         }
     }
 </script>

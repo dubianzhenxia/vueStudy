@@ -18,6 +18,7 @@ export default {
             checkBallList:[],
         }
     },
+
     methods:{
         checkBall(ball){
             //console.log(ball)
